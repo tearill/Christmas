@@ -151,11 +151,11 @@ table {
 .effect-out {
     -webkit-animation: effectOut 8s ease-in-out forwards;
     -webkit-transform-origin: 71% 72%;
-    animation: effectOut 8s ease-in-out forwards;
-    transform-origin: 71% 72%
+    -moz-animation: effectOut 8s ease-in-out forwards;
+    -moz-transform-origin: 71% 72%
 }
 
-@keyframes effectOut {
+@-webkit-keyframes effectOut {
     0% {
         opacity: 1
     }
@@ -165,7 +165,7 @@ table {
     }
 }
 
-@keyframes effectOut {
+@-moz-keyframes effectOut {
     0% {
         opacity: 1
     }
@@ -182,9 +182,9 @@ section.effect-in {
     -webkit-transform: scale(8);
     -webkit-animation: effectIn 5s ease-in-out forwards;
     -webkit-transform-origin: 58.5% 73.5%;
-    transform: scale(8);
-    animation: effectIn 5s ease-in-out forwards;
-    transform-origin: 58.5% 73.5%
+    -moz-transform: scale(8);
+    -moz-animation: effectIn 5s ease-in-out forwards;
+    -moz-transform-origin: 58.5% 73.5%
 }
 
 @-webkit-keyframes effectIn {
@@ -194,7 +194,7 @@ section.effect-in {
     }
 }
 
-@keyframes effectIn {
+@-moz-keyframes effectIn {
     100% {
         -moz-transform: scale(1);
         opacity: 1
@@ -223,7 +223,7 @@ section.effect-in {
     background-image: url(images/a/trees.png);
     background-size: 200% 100%;
     -webkit-animation: treeAnim 1s steps(2) infinite;
-    animation: treeAnim 1s steps(2) infinite
+    -moz-animation: treeAnim 1s steps(2) infinite
 }
 
 @-webkit-keyframes treeAnim {
@@ -235,7 +235,7 @@ section.effect-in {
     }
 }
 
-@keyframes treeAnim {
+@-moz-keyframes treeAnim {
     0% {
         background-position: 200% 100%
     }
@@ -258,7 +258,7 @@ section.effect-in {
 
 .chs-boy-deer {
     -webkit-animation: chsBoyDeer .75s steps(3, end) infinite;
-    animation: chsBoyDeer .75s steps(3, end) infinite
+    -moz-animation: chsBoyDeer .75s steps(3, end) infinite
 }
 
 @-webkit-keyframes chsBoyDeer {
@@ -270,7 +270,7 @@ section.effect-in {
     }
 }
 
-@keyframes chsBoyDeer {
+@-moz-keyframes chsBoyDeer {
     0% {
         background-position: 0 100%
     }
@@ -288,7 +288,7 @@ section.effect-in {
     left: 3.3rem;
     top: .8rem;
     -webkit-animation: nucleus 2s infinite linear;
-    animation: nucleus 2s infinite linear
+    -moz-animation: nucleus 2s infinite linear
 }
 
 @-webkit-keyframes nucleus {
@@ -301,7 +301,7 @@ section.effect-in {
     }
 }
 
-@keyframes nucleus {
+@-moz-keyframes nucleus {
     0%,
     100% {
         box-shadow: 0 0 0 transparent
@@ -329,7 +329,7 @@ section.effect-in {
     top: 1.8rem;
     z-index: 5;
     -webkit-animation: cloudy 5s ease-in-out infinite;
-    animation: cloudy 5s ease-in-out infinite
+    -moz-animation: cloudy 5s ease-in-out infinite
 }
 
 @-webkit-keyframes cloudy {
@@ -338,7 +338,7 @@ section.effect-in {
     }
 }
 
-@keyframes cloudy {
+@-moz-keyframes cloudy {
     50% {
         -moz-transform: translateY(-.1rem)
     }
@@ -352,12 +352,12 @@ section.effect-in {
     top: 6.2rem;
     cursor: pointer;
     -webkit-perspective: 500px;
-    perspective: 500px
+    -moz-perspective: 500px
 }
 
 .window-content {
     -webkit-transform-style: preserve-3d;
-    transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
     width: 91%;
     margin: 0 auto;
     height: 100%
@@ -406,14 +406,14 @@ section.effect-in {
     float: left;
     background: url(images/a/window-left.png);
     -webkit-border-top-left-radius: .1rem;
-    border-top-left-radius: .1rem
+    -moz-border-top-left-radius: .1rem
 }
 
 .window-right {
     float: right;
     background: url(images/a/window-right.png);
     -webkit-border-top-right-radius: .1rem;
-    border-top-right-radius: .1rem
+    -moz-border-top-right-radius: .1rem
 }
 
 .window-left,
@@ -427,18 +427,18 @@ section.effect-in {
 
 .window-transition {
     -webkit-transition: 2s ease-in-out;
-    transition: 2s ease-in-out
+    -moz-transition: 2s ease-in-out
 }
 
 .window-left.hover {
-    transform: scale(.95) rotateY(60deg);
+    -moz-transform: scale(.95) rotateY(60deg);
     -webkit-transform: scale(.95) rotateY(60deg);
     margin-top: .1rem;
     margin-left: -.25rem
 }
 
 .window-right.hover {
-    transform: scale(.95) rotateY(-60deg);
+    -moz-transform: scale(.95) rotateY(-60deg);
     -webkit-transform: scale(.95) rotateY(-60deg);
     margin-top: .1rem;
     margin-right: -.25rem
@@ -454,12 +454,12 @@ section.effect-in {
 
 .walk-stop {
     -webkit-animation-play-state: paused;
-    animation-play-state: paused
+    -moz-animation-play-state: paused
 }
 
 .walk-run {
     -webkit-animation-play-state: running;
-    animation-play-state: running
+    -moz-animation-play-state: running
 }
 
 .girl {
@@ -476,7 +476,7 @@ section.effect-in {
 .girl-standUp {
     left: 1.2rem;
     -webkit-animation: standUp .2s steps(3, start) forwards;
-    animation: standUp .2s steps(3, start) forwards
+    -moz-animation: standUp .2s steps(3, start) forwards
 }
 
 @-webkit-keyframes standUp {
@@ -489,7 +489,7 @@ section.effect-in {
     }
 }
 
-@keyframes standUp {
+@-moz-keyframes standUp {
     0% {
         background-position: 0 100%
     }
@@ -503,7 +503,7 @@ section.effect-in {
     top: 4rem;
     left: .5rem;
     -webkit-animation: throwBook .3s steps(2, start) forwards;
-    animation: throwBook .3s steps(2, start) forwards
+    -moz-animation: throwBook .3s steps(2, start) forwards
 }
 
 @-webkit-keyframes throwBook {
@@ -515,7 +515,7 @@ section.effect-in {
     }
 }
 
-@keyframes throwBook {
+@-moz-keyframes throwBook {
     0% {
         background-position: -300% 100%
     }
@@ -527,7 +527,7 @@ section.effect-in {
 .girl-walk {
     left: 1rem;
     -webkit-animation: girlWalk .9s steps(4, start) infinite;
-    animation: girlWalk .9s steps(4, start) infinite
+    -moz-animation: girlWalk .9s steps(4, start) infinite
 }
 
 @-webkit-keyframes girlWalk {
@@ -539,7 +539,7 @@ section.effect-in {
     }
 }
 
-@keyframes girlWalk {
+@-moz-keyframes girlWalk {
     0% {
         background-position: -500% 100%
     }
@@ -555,7 +555,7 @@ section.effect-in {
 
 .girl-choose {
     -webkit-animation: girlChoose 2s steps(2, end) forwards;
-    animation: girlChoose 2s steps(2, end) forwards
+    -moz-animation: girlChoose 2s steps(2, end) forwards
 }
 
 @-webkit-keyframes girlChoose {
@@ -567,7 +567,7 @@ section.effect-in {
     }
 }
 
-@keyframes girlChoose {
+@-moz-keyframes girlChoose {
     0% {
         background-position: -1000% 100%
     }
@@ -578,7 +578,7 @@ section.effect-in {
 
 .girl-weep {
     -webkit-animation: girlWeep 450ms steps(4, end) forwards infinite;
-    animation: girlWeep 450ms steps(4, end) forwards infinite
+    -moz-animation: girlWeep 450ms steps(4, end) forwards infinite
 }
 
 @-webkit-keyframes girlWeep {
@@ -590,7 +590,7 @@ section.effect-in {
     }
 }
 
-@keyframes girlWeep {
+@-moz-keyframes girlWeep {
     0% {
         background-position: -1300% 100%
     }
@@ -601,7 +601,7 @@ section.effect-in {
 
 .girl-hug {
     -webkit-animation: girlHug 450ms steps(3, end) forwards;
-    animation: girlHug 450ms steps(3, end) forwards
+    -moz-animation: girlHug 450ms steps(3, end) forwards
 }
 
 @-webkit-keyframes girlHug {
@@ -614,7 +614,7 @@ section.effect-in {
     }
 }
 
-@keyframes girlHug {
+@-moz-keyframes girlHug {
     0% {
         background-position: -1700% 100%
     }
@@ -656,7 +656,7 @@ section.effect-in {
 }
 
 .boy-walk {
-    animation: boyWalk .75s steps(4, end) infinite;
+    -webkit-animation: boyWalk .75s steps(4, end) infinite;
     -moz-animation: boyWalk .75s steps(4, end) infinite
 }
 
@@ -669,7 +669,7 @@ section.effect-in {
     }
 }
 
-@keyframes boyWalk {
+@-moz-keyframes boyWalk {
     0% {
         background-position: 0 100%
     }
@@ -695,7 +695,7 @@ section.effect-in {
 }
 
 .boy-unwrapp {
-    animation: unwrapp 2s steps(2, end) 1 forwards;
+    -webkit-animation: unwrapp 2s steps(2, end) 1 forwards;
     -moz-animation: unwrapp 2s steps(2, end) 1 forwards
 }
 
@@ -708,7 +708,7 @@ section.effect-in {
     }
 }
 
-@keyframes unwrapp {
+@-moz-keyframes unwrapp {
     0% {
         background-position: -400% 100%
     }
@@ -718,7 +718,7 @@ section.effect-in {
 }
 
 .boy-hug {
-    animation: boyHug 1s steps(3, end) 1 forwards;
+    -webkit-animation: boyHug 1s steps(3, end) 1 forwards;
     -moz-animation: boyHug 1s steps(3, end) 1 forwards
 }
 
@@ -731,7 +731,7 @@ section.effect-in {
     }
 }
 
-@keyframes boyHug {
+@-moz-keyframes boyHug {
     0% {
         background-position: -1000% 100%
     }
@@ -912,11 +912,11 @@ section.effect-in {
 }
 
 .deer-animate {
-    animation: deerAnimate 750ms steps(3, end) infinite;
+    -webkit-animation: deerAnimate 750ms steps(3, end) infinite;
     -moz-animation: deerAnimate 750ms steps(3, end) infinite
 }
 
-@keyframes deerAnimate {
+@-webkit-keyframes deerAnimate {
     0% {
         background-position: 0 100%
     }
@@ -925,7 +925,7 @@ section.effect-in {
     }
 }
 
-@keyframes deerAnimate {
+@-moz-keyframes deerAnimate {
     0% {
         background-position: 0 100%
     }
@@ -940,21 +940,21 @@ section.effect-in {
 
 .window-left.close,
 .window-right.close {
-    animation: closeWindow 2s forwards;
-    animation: closeWindow 2s forwards
+    -webkit-animation: closeWindow 2s forwards;
+    -moz-animation: closeWindow 2s forwards
 }
 
-@keyframes closeWindow {
+@-webkit-keyframes closeWindow {
     100% {
-        transform: scale(1) rotateY(0) rotateZ(0);
+        -webkit-transform: scale(1) rotateY(0) rotateZ(0);
         margin-right: 0;
         margin-left: 0
     }
 }
 
-@keyframes closeWindow {
+@-moz-keyframes closeWindow {
     100% {
-        transform: scale(1) rotateY(0) rotateZ(0);
+        -moz-transform: scale(1) rotateY(0) rotateZ(0);
         margin-right: 0;
         margin-left: 0
     }
@@ -965,8 +965,8 @@ section.effect-in {
     position: absolute;
     left: 50%;
     bottom: .1rem;
-    transform: translateZ(-50px);
-    transform: translateZ(-50px)
+    -webkit-transform: translateZ(-50px);
+    -moz-transform: translateZ(-50px)
 }
 
 .window-scene-bg {
