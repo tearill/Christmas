@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+    <script src="./Timetables.min.js"></script>
+    <title>1721818网课课表</title>
+    <style>
+        #coursesTable {
+            padding: 15px 10px;
+        }
+
+        .Courses-head {
+            background-color: #edffff;
+        }
+
+        .Courses-head > div {
+            text-align: center;
+            font-size: 14px;
+            line-height: 28px;
+        }
+
+        .left-hand-TextDom, .Courses-head {
+            background-color: #f2f6f7;
+        }
+
+        .Courses-leftHand {
+            background-color: #f2f6f7;
+            font-size: 12px;
+        }
+
+        .Courses-leftHand .left-hand-index {
+            color: #9c9c9c;
+            margin-bottom: 4px !important;
+        }
+
+        .Courses-leftHand .left-hand-name {
+            color: #666;
+        }
+
+        .Courses-leftHand p {
+            text-align: center;
+            font-weight: 900;
+        }
+
+        .Courses-head > div {
+            border-left: none !important;
+        }
+
+        .Courses-leftHand > div {
+            padding-top: 5px;
+            border-bottom: 1px dashed rgb(219, 219, 219);
+        }
+
+        .Courses-leftHand > div:last-child {
+            border-bottom: none !important;
+        }
+
+        .left-hand-TextDom, .Courses-head {
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1) !important;
+        }
+
+        .Courses-content > ul {
+            border-bottom: 1px dashed rgb(219, 219, 219);
+            box-sizing: border-box;
+        }
+
+        .Courses-content > ul:last-child {
+            border-bottom: none !important;
+        }
+
+        .highlight-week {
+            color: #02a9f5 !important;
+        }
+
+        .Courses-content li {
+            text-align: center;
+            color: #666666;
+            font-size: 14px;
+            line-height: 50px;
+        }
+
+        .Courses-content li span {
+            padding: 6px 2px;
+            box-sizing: border-box;
+            line-height: 18px;
+            border-radius: 4px;
+            white-space: normal;
+            word-break: break-all;
+            cursor: pointer;
+        }
+
+        .grid-active {
+            z-index: 9999;
+        }
+
+        .grid-active span {
+            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+<body>
+<div id="coursesTable"></div>
+<script>
+  var courseList = [
+    [ '大数据管理与运用', '大数据管理与运用',  '', '', '分布式与云计算', '分布式与云计算', '', ''],
+    ['', '', '商务智能与数据挖掘前十周学完', '商务智能与数据挖掘前十周学完', '', '', '', '', '', '', '', ''],
+    ['大数据管理与运用', '大数据管理与运用', '商务智能与数据挖掘前十周学完', '商务智能与数据挖掘前十周学完', '', '', '', '', '', '', '', ''],
+    ['', '', '商务智能与数据挖掘前十周学完', '商务智能与数据挖掘前十周学完', '', '', '分布式与云计算', '分布式与云计算', '', '', '', ''],
+    ['大数据管理与运用', '大数据管理与运用', '', '', '', '', '', '', '', '', '', ''],
+  ];
+  var week = window.innerWidth > 360 ? ['周一', '周二', '周三', '周四', '周五'] :
+    ['一', '二', '三', '四', '五'];
+  var day = new Date().getDay();
+  var courseType = [
+    [{index: '1', name: '8:00'}, 1],
+    [{index: '2', name: '9:30'}, 1],
+    [{index: '3', name: '10:30'}, 1],
+    [{index: '4', name: '11:30'}, 1],
+    [{index: '5', name: '12:30'}, 1],
+    [{index: '6', name: '14:30'}, 1],
+    [{index: '7', name: '15:30'}, 1],
+    [{index: '8', name: '16:30'}, 1],
+    [{index: '9', name: '17:30'}, 1],
+    [{index: '10', name: '18:30'}, 1],
+  ];
+  var courseUrl = [
+    { name: "大数据管理与运用", url: "https://onlineh5.zhihuishu.com/onlineWeb.html#/studentIndex"},
+    { name: "分布式与云计算", url: "http://www.icourse163.org/spoc/course/DHLG-1450190209"},
+    { name: "商务智能与数据挖掘前十周学完", url: "http://www.julyedu.com/video/play/40/191"}
+  ]
+  // 实例化(初始化课表)
+  var Timetable = new Timetables({
+    el: '#coursesTable',
+    timetables: courseList,
+    week: week,
+    timetableType: courseType,
+    highlightWeek: day,
+    gridOnClick: function (e) {
+      if (confirm(e.name + '  ' + e.week + ', 第' + e.index + '节课, 课长' + e.length + '节' + '  现在跳转到课堂。。。')) {
+        // console.log(e);
+      const urlTo = courseUrl.filter(item => {
+        if(item.name === e.name) return item
+      })
+    　window.open(urlTo[0].url);
+      } else {
+        alert('那你再看看吧');
+        window.history.back(-1);
+      }
+
+    },
+    styles: {
+      Gheight: 50
+    }
+  });
+
+</script>
+</body>
+</html>
